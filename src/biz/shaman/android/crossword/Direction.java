@@ -1,4 +1,4 @@
-package ua.biz.shaman.crossword;
+package biz.shaman.android.crossword;
 
 public enum Direction
 {

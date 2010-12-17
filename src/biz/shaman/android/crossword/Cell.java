@@ -1,4 +1,4 @@
-package ua.biz.shaman.crossword;
+package biz.shaman.android.crossword;
 
 public class Cell
 {
@@ -7,5 +7,4 @@ public class Cell
 
     private boolean containedInVerticalGroup;
     private boolean containedInHorizontalGroup;
-
 }

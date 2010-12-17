@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, CrosswordDemoActivity!</string>
-    <string name="app_name">crossword</string>
+    <string name="hello">Hello World, CrosswordActivity!</string>
+    <string name="app_name">Crossword</string>
 </resources>

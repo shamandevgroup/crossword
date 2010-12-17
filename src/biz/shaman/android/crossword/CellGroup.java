@@ -1,7 +1,8 @@
-package ua.biz.shaman.crossword;
+package biz.shaman.android.crossword;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class CellGroup
 {
