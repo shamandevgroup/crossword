@@ -1,0 +1,94 @@
+<html>
+<head>
+<style type="text/css">
+td {
+ width: 40px;
+ height: 40px;
+}
+
+.letter {
+ background: yellow;
+ border-width: 2px;
+ border-color: red;
+ border-radius: 5px;
+ color: green;
+ font-weight: bold;
+}
+</style>
+
+<script type="text/javascript">
+function getCell(x, y) {
+ return document.getElementById("c_" + x + "x" + y);
+}
+
+function setClicked() {
+ var x = document.getElementById("coord_x").value;
+ var y = document.getElementById("coord_y").value;
+
+ var cell = getCell(x, y);
+
+ var letter = document.getElementById("letter").value;
+
+ if (cell && cell.firstChild) {
+  cell.firstChild.nodeValue = letter.substring(0, 1).toUpperCase();
+ }
+}
+</script>
+
+</head>
+<body>
+
+<table border="1px" cellspacing="0" cellpadding="0" frame="void" >
+<tbody align="center">
+
+<tr>
+<td id="c_1x1"></td> 
+<td id="c_1x2"></td> 
+<td id="c_1x3"></td> 
+<td id="c_1x4" class="letter"> H </td> 
+<td id="c_1x5"></td> 
+</tr>
+
+<tr>
+<td id="c_2x1"></td> 
+<td id="c_2x2"></td> 
+<td id="c_2x3"></td> 
+<td id="c_2x4" class="letter"> E </td> 
+<td id="c_2x5"></td> 
+</tr>
+
+<tr>
+<td id="c_3x1"></td> 
+<td id="c_3x2"></td> 
+<td id="c_3x3"></td> 
+<td id="c_3x4" class="letter"> L </td> 
+<td id="c_3x5"></td> 
+</tr>
+
+<tr>
+<td id="c_4x1" class="letter"> &nbsp; </td> 
+<td id="c_4x2" class="letter"> &nbsp; </td> 
+<td id="c_4x3" class="letter"> &nbsp; </td> 
+<td id="c_4x4" class="letter"> L </td> 
+<td id="c_4x5" class="letter"> &nbsp; </td> 
+</tr>
+
+<tr>
+<td id="c_5x1"></td> 
+<td id="c_5x2"></td> 
+<td id="c_5x3"></td> 
+<td id="c_5x4" class="letter"> O </td> 
+<td id="c_5x5"></td> 
+</tr>
+
+</tbody>
+</table>
+
+<br/>
+Coordinates: <input name="coord_x" value="4" id="coord_x" size="1"> x <input name="coord_y" value="1" id="coord_y" size="1"> 
+<br/>
+Coordinates: <input name="letter" value="W" id="letter" size="1"> x <input type="button" value="Set" onClick="setClicked()"> 
+
+</body>
+</html>
+

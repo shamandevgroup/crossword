@@ -11,6 +11,7 @@ public class CellGroup
         super();
     }
 
+    @SuppressWarnings("unused")
     private List<Cell> cells = new ArrayList<Cell>();
 
 }
