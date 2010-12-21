@@ -33,6 +33,12 @@ function setClicked() {
   cell.firstChild.nodeValue = letter.substring(0, 1).toUpperCase();
  }
 }
+
+function getCellContent(id)
+{
+    return document.getElementById(id).firstChild.nodeValue;
+}
+
 </script>
 
 </head>
@@ -41,11 +47,11 @@ function setClicked() {
 <table border="1px" cellspacing="0" cellpadding="0" frame="void" >
 <tbody align="center">
 
-<tr>
+<tr">
 <td id="c_1x1"></td> 
 <td id="c_1x2"></td> 
 <td id="c_1x3"></td> 
-<td id="c_1x4" class="letter"> H </td> 
+<td id="c_1x4" class="letter" onClick="JSInterface.onClick(1, 4, getCellContent('c_1x4'))"> H </td> 
 <td id="c_1x5"></td> 
 </tr>
 
@@ -53,7 +59,7 @@ function setClicked() {
 <td id="c_2x1"></td> 
 <td id="c_2x2"></td> 
 <td id="c_2x3"></td> 
-<td id="c_2x4" class="letter"> E </td> 
+<td id="c_2x4" class="letter" onClick="JSInterface.onClick(2, 4, getCellContent('c_2x4'))"> E </td> 
 <td id="c_2x5"></td> 
 </tr>
 
@@ -61,7 +67,7 @@ function setClicked() {
 <td id="c_3x1"></td> 
 <td id="c_3x2"></td> 
 <td id="c_3x3"></td> 
-<td id="c_3x4" class="letter"> L </td> 
+<td id="c_3x4" class="letter" onClick="JSInterface.onClick(3, 4, getCellContent('c_3x4'))"> L </td> 
 <td id="c_3x5"></td> 
 </tr>
 
@@ -69,7 +75,7 @@ function setClicked() {
 <td id="c_4x1" class="letter"> &nbsp; </td> 
 <td id="c_4x2" class="letter"> &nbsp; </td> 
 <td id="c_4x3" class="letter"> &nbsp; </td> 
-<td id="c_4x4" class="letter"> L </td> 
+<td id="c_4x4" class="letter" onClick="JSInterface.onClick(4, 4, getCellContent('c_4x4'))"> L </td> 
 <td id="c_4x5" class="letter"> &nbsp; </td> 
 </tr>
 
@@ -77,7 +83,7 @@ function setClicked() {
 <td id="c_5x1"></td> 
 <td id="c_5x2"></td> 
 <td id="c_5x3"></td> 
-<td id="c_5x4" class="letter"> O </td> 
+<td id="c_5x4" class="letter" onClick="JSInterface.onClick(5, 4, getCellContent('c_5x4'))"> O </td> 
 <td id="c_5x5"></td> 
 </tr>
 
