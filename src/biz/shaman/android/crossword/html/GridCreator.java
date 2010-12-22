@@ -10,13 +10,13 @@ public class GridCreator
     public static String getInstance()
     {
         Tag title = Tag.title();
-        title.setText("HTML generator example");
+        title.addText("HTML generator example");
 
         Tag head = Tag.head();
         head.addTag(title);
 
         Tag h1 = Tag.h7();
-        h1.setText("HTML Generator demo");
+        h1.addText("HTML Generator demo");
 
         Tag tableBody = Tag.tbody();
         tableBody.addAttribute(new Attribute(Attribute.ALIGN, "center"));
@@ -33,7 +33,7 @@ public class GridCreator
             {
                 id = "c_" + (i + 1) + "x" + (j + 1);
                 cell = Tag.td();
-                cell.setText(Integer.toString(i));
+                cell.addText(Integer.toString(i));
                 cell.addAttribute(new Attribute(Attribute.ID, id));
                 cell.addAttribute(new Attribute(Attribute.CLASS, "letter"));
                 cell.addAttribute(new Attribute(Attribute.ON_CLICK, JS_INTERFACE_NAME + ".onClick(" + (i + 1) + ", " + (j + 1) + ", getCellContent('" + id + "'))"));
@@ -53,7 +53,7 @@ public class GridCreator
         body.addTag(h1);
         body.addTag(table);
         body.addTag(Tag.br());
-        body.setText("End of Example");
+        body.addText("End of Example");
 
         Tag html = Tag.html();
         html.addTag(head);

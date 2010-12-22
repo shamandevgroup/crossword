@@ -97,9 +97,9 @@ public class Tag extends Node
         return this;
     }
 
-    public Tag setText(String simpleText)
+    public Tag addText(String text)
     {
-        this.content.setText(simpleText);
+        this.content.addText(text);
         return this;
     }
 

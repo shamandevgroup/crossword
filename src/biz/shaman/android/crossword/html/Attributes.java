@@ -21,7 +21,7 @@ public class Attributes
         while (iterator.hasNext())
         {
             out.append(' ');
-            out.append(iterator.next().toString());
+            out.append(iterator.next());
         }
         return out.toString();
     }

@@ -27,14 +27,13 @@ public class CrosswordActivity extends Activity
         WebView webView = ((WebView) findViewById(R.id.crossword_webview));
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setUseWideViewPort(true);
-        webView.addJavascriptInterface(new JSInterface(this), JSInterface.class.getSimpleName());
+        webView.addJavascriptInterface(new JSInterface(this, webView), JSInterface.class.getSimpleName());
         // webView.loadData(readRawResource(getResources(), R.raw.sample1_view), "text/html", "utf8");
 
         String tools = readRawResource(getResources(), R.raw.tools);
         String style = readRawResource(getResources(), R.raw.style);
         String html = GridCreator.getInstance();
         String all = style + tools + html;
-        Log.d("TEST", all);
         webView.loadData(all, "text/html", "utf8");
     }
 
@@ -42,22 +41,25 @@ public class CrosswordActivity extends Activity
     {
         InputStream is = resources.openRawResource(id);
 
+        if (is == null)
+        {
+            return "";
+        }
+
         try
         {
-            if (is != null)
+            InputStreamReader reader = new InputStreamReader(is);
+            char[] buffer = new char[1024];
+
+            StringBuilder builder = new StringBuilder();
+            int count;
+
+            while ((count = reader.read(buffer)) != -1)
             {
-                InputStreamReader reader = new InputStreamReader(is);
-                char[] buffer = new char[1024];
-
-                StringBuilder builder = new StringBuilder();
-                int count;
-                while ((count = reader.read(buffer)) != -1)
-                {
-                    builder.append(buffer, 0, count);
-                }
-
-                return builder.toString();
+                builder.append(buffer, 0, count);
             }
+
+            return builder.toString();
         }
         catch (IOException ex)
         {

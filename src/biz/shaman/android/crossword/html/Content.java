@@ -14,9 +14,9 @@ public class Content
         this.nodes.add(tag);
     }
 
-    public void setText(String simpleText)
+    public void addText(String text)
     {
-        this.nodes.add(new TextNode(simpleText));
+        this.nodes.add(new TextNode(text));
     }
 
     @Override
@@ -28,7 +28,6 @@ public class Content
         }
 
         StringBuffer out = new StringBuffer();
-
         ListIterator<Node> iterator = this.nodes.listIterator();
         while (iterator.hasNext())
         {
