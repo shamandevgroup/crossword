@@ -1,0 +1,16 @@
+<style type="text/css">
+td
+{
+    width: 40px;
+    height: 40px;
+}
+.letter
+{
+    background: yellow;
+    border-width: 2px;
+    border-color: red;
+    border-radius: 5px;
+    color: green;
+    font-weight: bold;
+}
+</style>

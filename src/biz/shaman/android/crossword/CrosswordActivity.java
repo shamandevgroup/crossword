@@ -9,6 +9,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.webkit.WebView;
+import biz.shaman.android.crossword.html.GridCreator;
 import biz.shaman.android.crossword.js.JSInterface;
 
 
@@ -27,7 +28,14 @@ public class CrosswordActivity extends Activity
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setUseWideViewPort(true);
         webView.addJavascriptInterface(new JSInterface(this), JSInterface.class.getSimpleName());
-        webView.loadData(readRawResource(getResources(), R.raw.sample1_view), "text/html", "utf8");
+        // webView.loadData(readRawResource(getResources(), R.raw.sample1_view), "text/html", "utf8");
+
+        String tools = readRawResource(getResources(), R.raw.tools);
+        String style = readRawResource(getResources(), R.raw.style);
+        String html = GridCreator.getInstance();
+        String all = style + tools + html;
+        Log.d("TEST", all);
+        webView.loadData(all, "text/html", "utf8");
     }
 
     private static String readRawResource(Resources resources, int id)
